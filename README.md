@@ -9,7 +9,7 @@ Module Input Variables
 - `name`   - Unique name used to label the VPN Gateway and Customer Gateway.
 - `vpn_gateway_id` - VPN Gateway to associate with Customer Gateway and VPN Connection.
 -  Customer Gateway (CGW): you can use an existing CGW or you can create a new CGW
-   - To use existing CGW: pass the CGW ID in `customer_gateway_id`. In this case `ip_address` and `bagp_asn` are not relevant and not used
+   - To use existing CGW: pass the CGW ID in `customer_gateway_id`. In this case `ip_address` and `bgp_asn` are not relevant and not used
    - To create a new CGW: leave `customer_gateway_id` as "", and specify 2 variables below:
      - `ip_address` - The IP address of the gateway's Internet-routable external interface.
      - `bgp_asn` - BGP Autonomous System Number. If BGP is not in use, then by convention set this value to 65000.
@@ -19,7 +19,7 @@ Module Input Variables
 - `static_routes_only` - Determines whether routes learned from BGP will be propagated to route tables. If set to true, you must have vgw route propagation enabled on route tables, and of course you must be running BGP. Accepts true or false.
 - `add_static_routes_to_tables` - Determines whether static routes will be added to all route tables in route_table_ids list or if vgw route propagation will be used instead. If set to true, then route_table_ids, route_table_count, and destination_cidr_blocks must also be provided.
 
-Usage 
+Usage
 -----
 ```js
 module "vpc" {
