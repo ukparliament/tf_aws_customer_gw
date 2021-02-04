@@ -15,10 +15,6 @@ resource "aws_vpn_connection" "default" {
   type                = "ipsec.1"
   static_routes_only  = "${var.static_routes_only}"
 
-  tags = {
-    Name = "${var.name}"
-  }
-
   lifecycle {
     create_before_destroy = true
   }
