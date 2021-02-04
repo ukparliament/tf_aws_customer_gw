@@ -4,9 +4,6 @@ resource "aws_customer_gateway" "default" {
   ip_address = "${var.ip_address}"
   type       = "ipsec.1"
 
-  tags {
-    Name = "${var.name}"
-  }
 
   lifecycle {
     create_before_destroy = true
@@ -18,10 +15,6 @@ resource "aws_vpn_connection" "default" {
   customer_gateway_id = "${var.customer_gateway_id == "" ? join("", aws_customer_gateway.default.*.id) : var.customer_gateway_id}"
   type                = "ipsec.1"
   static_routes_only  = "${var.static_routes_only}"
-
-  tags {
-    Name = "${var.name}"
-  }
 
   lifecycle {
     create_before_destroy = true
