@@ -4,7 +4,7 @@ resource "aws_customer_gateway" "default" {
   ip_address = "${var.ip_address}"
   type       = "ipsec.1"
 
-  tags {
+  tags = {
     Name = "${var.name}"
   }
 
@@ -19,7 +19,7 @@ resource "aws_vpn_connection" "default" {
   type                = "ipsec.1"
   static_routes_only  = "${var.static_routes_only}"
 
-  tags {
+  tags = {
     Name = "${var.name}"
   }
 
