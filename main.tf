@@ -4,9 +4,9 @@ resource "aws_customer_gateway" "default" {
   ip_address = "${var.ip_address}"
   type       = "ipsec.1"
 
-  lifecycle {
-    create_before_destroy = true
-  }
+  //lifecycle = {
+    //create_before_destroy = true
+  //}
 }
 
 resource "aws_vpn_connection" "default" {
