@@ -1,4 +1,4 @@
-resource "aws_customer_gateway" "default" {
+resource "aws_customer_gatewayx" "default" {
   count      = "${var.customer_gateway_id == "" ? 1 : 0}"
   bgp_asn    = "${var.bgp_asn}"
   ip_address = "${var.ip_address}"
